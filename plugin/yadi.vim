@@ -27,7 +27,8 @@ function s:DetectIndent()
             " indentation width.
             let width = match(line, "[^ ]")
             if width != -1
-                if width > 0
+                if width > 1
+                    " Only count a line if it's truly indented.
                     let spaced += 1
                 endif
                 let indent = width - lastwidth
